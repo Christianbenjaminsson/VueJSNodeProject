@@ -4,14 +4,22 @@ var express = require("express"),
   cors = require("cors"),
   mongoose = require("mongoose");
 
-mongoose.connect("mongodb://localhost:27017/vue_example").then(
-  () => {
-    console.log("Database connection is successful");
-  },
-  (err) => {
-    console.log("Error when connecting to the database" + err);
-  }
-);
+mongoose
+  .connect(
+    "mongodb+srv://MongoDB:QYHUaH!WjJB7jei@cluster0.5pnzd.mongodb.net/vue_example?retryWrites=true&w=majority",
+    {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    }
+  )
+  .then(
+    () => {
+      console.log("Database connection is successful");
+    },
+    (err) => {
+      console.log("Error when connecting to the database" + err);
+    }
+  );
 const app = express();
 app.use(express.static("public"));
 app.use(bodyParser.json());
