@@ -5,13 +5,10 @@ var express = require("express"),
   mongoose = require("mongoose");
 
 mongoose
-  .connect(
-    "mongodb+srv://MongoDB:QYHUaH!WjJB7jei@cluster0.5pnzd.mongodb.net/vue_example?retryWrites=true&w=majority",
-    {
-      useNewUrlParser: true,
-      useUnifiedTopology: true,
-    }
-  )
+  .connect("", {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+  })
   .then(
     () => {
       console.log("Database connection is successful");
